@@ -27,11 +27,11 @@ iptables -A INPUT -p tcp --dport 7001 -j DROP
 # -I 为 INSERT 一条规则到 chain 的开头（默认行为）
 # -j ACCPET 为 指定 jump 策略为 ACCEPT（畅通）
 iptables -I INPUT -s 127.0.0.1     -p tcp  --dport 7001    -j ACCEPT
-iptables -I INPUT -s 10.39.224.178  -p tcp  --dport 7001    -j ACCEPT
-iptables -I INPUT -s 10.39.224.166   -p tcp  --dport 5432    -j ACCEPT
-iptables -I INPUT -s 192.168.2.c   -p tcp  --dport 5432    -j ACCEPT
-iptables -I INPUT -s 10.39.224.0/24 -p tcp  --dport 7001 -j ACCEPT
+iptables -I INPUT -s xxxx(服务器ip)  -p tcp  --dport 7001    -j ACCEPT
+iptables -I INPUT -s xxxx   -p tcp  --dport 5432    -j ACCEPT
+iptables -I INPUT -s xxxx   -p tcp  --dport 5432    -j ACCEPT
+iptables -I INPUT -s xxxx -p tcp  --dport 7001 -j ACCEPT
 
 # 设置其他需要访问数据的ip(d、e)
-iptables -I INPUT -s 10.39.224.178 -p tcp --dport 7001 -j ACCEPT
-iptables -I INPUT -s 10.39.224.166 -p tcp --dport 7001 -j ACCEPT
+iptables -I INPUT -s xxxx(服务器ip)  -p tcp --dport 7001 -j ACCEPT
+iptables -I INPUT -s xxxx(服务器ip)  -p tcp --dport 7001 -j ACCEPT
