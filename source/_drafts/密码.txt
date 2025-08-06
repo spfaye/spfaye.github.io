@@ -1,0 +1,35 @@
+
+服务器登录密码：
+2025JWCbzdgzbgm
+
+Mysql：
+root/2025JWCbzdgzbgm@
+
+CREATE USER '<username>'@'%' IDENTIFIED WITH caching_sha2_password BY '<password>';
+192.168.10.9
+
+CREATE USER 'jiangwch'@'localhost' IDENTIFIED WITH caching_sha2_password BY '2025JWCnftlearn@';
+
+-- 授予创建数据库的权限
+GRANT CREATE ON *.* TO 'jiangwch'@'%';
+
+-- 如果还需要让用户管理自己创建的数据库，可以额外授予以下权限
+GRANT ALL PRIVILEGES ON `jiangwch\_%`.* TO 'jiangwch'@'%';
+
+-- 刷新权限使设置生效
+FLUSH PRIVILEGES;
+
+sudo curl -L "https://github.com/docker/compose/releases/download/docker-compose" -o /usr/local/bin/docker-compose
+
+
+# 替换 v2.20.3 为最新版本号
+sudo curl -L "https://github.com/docker/compose/releases/download/v2.20.3/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/
+
+sudo curl -L "https://mirrors.aliyun.com/docker-toolbox/linux/compose/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-composedocker-compose
+
+
+# 使用 DaoCloud 镜像（推荐）
+sudo curl -L "https://get.daocloud.io/docker/compose/releases/download/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+
+# 或使用 阿里云 镜像
+sudo curl -L "https://mirrors.aliyun.com/docker-toolbox/linux/compose/v2.24.6/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
